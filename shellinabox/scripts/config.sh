@@ -28,7 +28,7 @@ EOT
 
     if [ "$shellinabox_enabled"x = "1"x ]; then
         killall shellinaboxd
-        $APP_ROOT/shellinaboxd --css=$APP_ROOT/white-on-black.css -b
+        $APP_ROOT/bin/shellinaboxd --css=$APP_ROOT/bin/white-on-black.css -b
         uci commit
         on_get
     elif [ "$shellinabox_enabled"x = "0"x ]; then
@@ -46,7 +46,7 @@ on_start() {
     config_get shellinabox_enabled main enabled
     if [ "$shellinabox_enabled"x = "1"x ]; then
         killall shellinaboxd
-        $APP_ROOT/shellinaboxd --css=$APP_ROOT/white-on-black.css -b
+        $APP_ROOT/bin/shellinaboxd --css=$APP_ROOT/bin/white-on-black.css -b
     fi
 }
 
