@@ -1,7 +1,7 @@
 {
     "name":"shellinabox",
     "displayName":"命令行工具",
-    "version":"0.0.1",
+    "version":"0.0.2",
     "tags":"工具",
     "description": "在线命令行工具",
     "event_scripts":[
