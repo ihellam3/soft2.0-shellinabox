@@ -47,7 +47,6 @@ function action_shell()
         luci.ltn12.pump.all(reader, luci.http.write)
     else
         http.prepare_content("text/html; charset=UTF-8")
-        ksutil.perror("aaaa")
         options.method = "GET"
         local reader = httpclient.request_to_source("http://127.0.0.1:4200", options)
         luci.ltn12.pump.all(reader, luci.http.write)
