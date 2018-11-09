@@ -49,7 +49,7 @@
       data: function () {
         var self = this
         return {
-          ksdev:"",
+          ksdev:"/cgi-bin/luci/apps/shellinabox/shell",
           model: {},
           schema: {
             fields: [{
@@ -92,7 +92,10 @@
       mounted: function() {
         var self = this;
         //How?
-        this.ksdev = "/cgi-bin/luci/apps/shellinabox/shell?ksdev=" + getParameterByName("ksdev");
+        var ksdev = getParameterByName("ksdev");
+        if (ksdev) {
+            this.ksdev = "/cgi-bin/luci/apps/shellinabox/shell?ksdev=" + ksdev;
+        }
 
         var tm = function() {
             axios.get("/cgi-bin/luci/apps/shellinabox").then(function(result) {
