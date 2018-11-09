@@ -92,7 +92,7 @@
       mounted: function() {
         var self = this;
         //How?
-        data.ksdev = "/cgi-bin/luci/apps/shellinabox/shell?ksdev=" + getParameterByName("ksdev");
+        this.ksdev = "/cgi-bin/luci/apps/shellinabox/shell?ksdev=" + getParameterByName("ksdev");
 
         var tm = function() {
             axios.get("/cgi-bin/luci/apps/shellinabox").then(function(result) {
