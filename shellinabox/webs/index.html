@@ -33,13 +33,13 @@
         if (!results[2]) return '';
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
-    function setup_kstoken() {
-        var kstoken = getParameterByName("kstoken");
-        if (kstoken) {
-            axios.defaults.headers.common['Ks-Authorization'] = kstoken;
+    function setup_ksdev() {
+        var ksdev = getParameterByName("ksdev");
+        if (ksdev) {
+            axios.defaults.headers.common['ksdev'] = ksdev;
         }
     }
-    setup_kstoken();
+    setup_ksdev();
 
     var vm = new Vue({
       el: "#app",
