@@ -19,7 +19,7 @@
       <div class="panel-body">
         <vue-form-generator :schema="schema" :model="model" :options="formOptions"></vue-form-generator>
       </div>
-        <a href="/cgi-bin/luci/apps/shellinabox/shell" target="_blank">打开命令行</a>
+        <a :href="ksdev" target="_blank">打开命令行</a>
     </div>
   </div>
 
@@ -49,6 +49,7 @@
       data: function () {
         var self = this
         return {
+          ksdev:"",
           model: {},
           schema: {
             fields: [{
@@ -89,7 +90,9 @@
         }
       },
       mounted: function() {
-        var self = this
+        var self = this;
+        //How?
+        data.ksdev = "/cgi-bin/luci/apps/shellinabox/shell?ksdev=" + getParameterByName("ksdev");
 
         var tm = function() {
             axios.get("/cgi-bin/luci/apps/shellinabox").then(function(result) {
